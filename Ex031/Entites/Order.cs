@@ -45,7 +45,16 @@ namespace Ex031.Entites
 
         public override string ToString()
         {
-            return $"Client: {Client.Name} ({Client.birthDate}) - {Client.Email}";
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"Order moment: {Moment}").AppendLine($"Order Status: {Status}");
+            sb.AppendLine($"Client: {Client.Name} ({Client.birthDate}) - {Client.Email}");
+
+            foreach (var item in Items)
+            {
+                sb.AppendLine($"{item.Product.Name}, Quantity: {item.Quantity}, Subtotal: {item.SubTotal():N2}");
+            }
+            sb.AppendLine($"Total prince: {Total():N2}");
+            return sb.ToString();
         }
     }
 }

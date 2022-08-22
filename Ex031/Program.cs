@@ -42,16 +42,7 @@ namespace Ex031
             }
             
             Console.WriteLine("ORDER SUMARY:");
-            Console.WriteLine($"\nOrder moment: {order.Moment}");
-            Console.WriteLine($"Order status: {order.Status}");
             Console.WriteLine(order);
-            Console.WriteLine("\nOrder items:");
-            foreach (var item in order.Items)
-            {
-                Console.WriteLine("------------------------------------");
-                Console.WriteLine($"{item.Product.Name}, Quantity: {item.Quantity}, Subtotal: {item.SubTotal():N}");
-            }
-            Console.WriteLine($"\nTotal price: {order.Total():N}");
 
             Console.ReadLine();
         }
