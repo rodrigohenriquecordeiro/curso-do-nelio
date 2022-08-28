@@ -10,7 +10,7 @@ namespace Ex034.Entities
         public DateTime CheckOut { get; set; }
 
         public Reservation()
-        { 
+        {
         }
 
         public Reservation(int roomNumber, DateTime checkIn, DateTime checkOut)
@@ -42,7 +42,7 @@ namespace Ex034.Entities
             {
                 throw new DomainException("Check-out date must be after check-in date");
             }
-            
+
             CheckIn = checkIn;
             CheckOut = checkOut;
         }
